@@ -4,13 +4,13 @@ public class targetPlayer : MonoBehaviour
 {
     public GameObject laserPrefab;
     public Transform firePoint;
-    public float fireRate = 1.0f;
+    public float fireRate = 2.0f;
     public float laserSpeed = 10.0f; // Adjust the speed as needed
     private float nextFireTime;
 
     void Start()
     {
-        nextFireTime = Time.time + 1 / fireRate;
+        nextFireTime = Time.time + 2 / fireRate;
     }
 
     void Update()
@@ -18,7 +18,7 @@ public class targetPlayer : MonoBehaviour
         if (Time.time > nextFireTime)
         {
             ShootLaser();
-            nextFireTime = Time.time + 1 / fireRate;
+            nextFireTime = Time.time + 2 / fireRate;
         }
     }
 
@@ -30,8 +30,7 @@ public class targetPlayer : MonoBehaviour
         // Set the velocity of the laser to shoot downwards
         rb.velocity = Vector2.down * laserSpeed;
 
-        // Destroy the laser after a certain time (e.g., 2 seconds)
-        Destroy(laser, 2f);
+
     }
 
 

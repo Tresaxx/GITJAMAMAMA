@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class ManagerScript : MonoBehaviour
 {
-
+    public float gameTime = 0.0f;
+    public float lastShot = 0.0f;
     public GameObject bulletPrefab;
     public GameObject cannon;
     public GameObject tank;
@@ -27,14 +28,16 @@ public class ManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameTime += Time.deltaTime;
         mouseVector = new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z);
         target = transform.GetComponent<Camera>().ScreenToWorldPoint(mouseVector);
         Vector3 playerTarget = tank.transform.position;
         //cursor.transform.position = new Vector2(target.x, target.y);
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && (lastShot <= gameTime + 40))
         {
+            lastShot = gameTime;
             Vector3 difference = target - cannon.transform.position;
             float distance = difference.magnitude;
             Vector2 direction = difference / distance;
