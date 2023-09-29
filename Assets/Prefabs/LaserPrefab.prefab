@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8211948662629001041}
   - component: {fileID: 2997096837180763154}
   - component: {fileID: 4246001533639606149}
-  - component: {fileID: 6089359208183962583}
+  - component: {fileID: -5104296691083524539}
   m_Layer: 0
   m_Name: LaserPrefab
   m_TagString: Laser
@@ -132,8 +132,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &6089359208183962583
-BoxCollider2D:
+--- !u!70 &-5104296691083524539
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -161,19 +161,9 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.13, y: 0.13}
-    newSize: {x: 0.13, y: 0.13}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
   m_Size: {x: 0.13, y: 0.13}
-  m_EdgeRadius: 0
+  m_Direction: 0

@@ -24,19 +24,30 @@ public class laserScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        Debug.Log("Collision Detected: " + collision.gameObject.name);
+
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            Debug.Log("Player Hit");
+            Destroy(this.gameObject);
             TankMovement tankMovement = collision.gameObject.GetComponent<TankMovement>();
             tankMovement.PlayerDamage(damage1);
-
         }
-        else if (collision.gameObject.tag == "Block")
+        else if (collision.gameObject.CompareTag("Block"))
         {
+            Debug.Log("Block Hit");
             Destroy(gameObject);
         }
-
-
+        else
+        {
+            Debug.Log("Other Object Hit");
+            Destroy(gameObject);
+        }
     }
+
+
+
+
+
 
 }
